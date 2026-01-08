@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="7" failures="0" errors="0" time="9.71">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2026-01-08T12:40:47" time="6.801" tests="2">
-    <testcase classname=" React is imported" name=" React is imported" time="0.016">
-    </testcase>
-    <testcase classname=" renders &apos;hello world&apos;" name=" renders &apos;hello world&apos;" time="0.071">
-    </testcase>
-  </testsuite>
-  <testsuite name="MyContainer" errors="0" failures="0" skipped="0" timestamp="2026-01-08T12:40:47" time="7.166" tests="1">
-    <testcase classname="MyContainer should input text and display it on the page when the button is clicked" name="MyContainer should input text and display it on the page when the button is clicked" time="0.16">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2026-01-08T12:40:47" time="7.007" tests="2">
+<testsuites name="jest tests" tests="7" failures="0" errors="0" time="8.574">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2026-01-08T12:44:02" time="5.057" tests="2">
     <testcase classname=" Right components created" name=" Right components created" time="0.011">
     </testcase>
     <testcase classname=" App.js has MyContainer.js component" name=" App.js has MyContainer.js component" time="0.038">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2026-01-08T12:40:47" time="7.152" tests="1">
-    <testcase classname=" List takes props" name=" List takes props" time="0.064">
+  <testsuite name="MyContainer" errors="0" failures="0" skipped="0" timestamp="2026-01-08T12:44:02" time="5.241" tests="1">
+    <testcase classname="MyContainer should input text and display it on the page when the button is clicked" name="MyContainer should input text and display it on the page when the button is clicked" time="0.164">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2026-01-08T12:40:47" time="7.264" tests="1">
-    <testcase classname=" conditional rendering" name=" conditional rendering" time="0.205">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2026-01-08T12:44:02" time="5.125" tests="2">
+    <testcase classname=" React is imported" name=" React is imported" time="0.01">
+    </testcase>
+    <testcase classname=" renders &apos;hello world&apos;" name=" renders &apos;hello world&apos;" time="0.052">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2026-01-08T12:44:02" time="5.17" tests="1">
+    <testcase classname=" conditional rendering" name=" conditional rendering" time="0.232">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2026-01-08T12:44:02" time="6.247" tests="1">
+    <testcase classname=" List takes props" name=" List takes props" time="0.056">
     </testcase>
   </testsuite>
 </testsuites>
