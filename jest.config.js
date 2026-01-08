@@ -1,15 +1,14 @@
-/** @type {import('ts-jest').JestConfigWithTsJest} */
 export default {
-  preset: 'ts-jest',
+  preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'jsdom',
-  moduleNameMapper: {
-    '\\.(css|less|sass|scss)$': 'identity-obj-proxy'
-  },
-  reporters: [
-    'default',
-    ['jest-junit', { outputDirectory: './test-results', outputName: 'junit.xml' }]
-  ],
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest'
-  }
+    '^.+\\.tsx?$': ['ts-jest', { useESM: true, tsconfig: './tsconfig.app.json' }]
+  },
+  moduleNameMapper: {
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
+  },
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
+  reporters: ['default', 'jest-junit'],
+  roots: ['<rootDir>/src/__test__'],
+  testTimeout: 10000
 };

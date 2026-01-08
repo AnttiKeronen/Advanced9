@@ -8,11 +8,12 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "jest --ci --coverage --reporters=default --reporters=jest-junit"
+    "test": "jest --ci"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -38,4 +39,3 @@
     "vite": "^7.2.4"
   }
 }
-
