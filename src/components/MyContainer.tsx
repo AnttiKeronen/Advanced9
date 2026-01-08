@@ -1,9 +1,7 @@
-// src/components/MyContainer.tsx
 import React, { useState } from "react";
 import MyList, { TItem } from "./MyList";
 
 const MyContainer = () => {
-  // Using simple numeric ids as strings
   const [items, setItems] = useState<TItem[]>([
     { id: "1", text: "First item", clicked: false },
     { id: "2", text: "Second item", clicked: false },
@@ -17,17 +15,13 @@ const MyContainer = () => {
     setText("");
   };
 
-  const handleItemClick = (id: string) => {
-    setItems(
-      items.map((item) =>
-        item.id === id ? { ...item, clicked: !item.clicked } : item
-      )
-    );
+  const handleUpdateList = (updatedItems: TItem[]) => {
+    setItems(updatedItems);
   };
 
   return (
     <div>
-      <MyList header="My List" items={items} onItemClick={handleItemClick} />
+      <MyList header="My List" items={items} updateList={handleUpdateList} />
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}

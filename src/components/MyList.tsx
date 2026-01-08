@@ -6,26 +6,30 @@ export type TItem = {
   clicked: boolean;
 };
 
-type ListProps = {
+interface ListProps {
   header: string;
   items: TItem[];
-  onItemClick: (id: string) => void;
-};
+  updateList: (items: TItem[]) => void;
+}
 
-const MyList = ({ header, items, onItemClick }: ListProps) => {
+const MyList: React.FC<ListProps> = ({ header, items, updateList }) => {
+  const handleClick = (id: string) => {
+    const newItems = items.map(item =>
+      item.id === id ? { ...item, clicked: !item.clicked } : item
+    );
+    updateList(newItems);
+  };
+
   return (
     <div>
       <h2>{header}</h2>
       <ul>
-        {items.map((item) => (
+        {items.map(item => (
           <li
             key={item.id}
             role="listitem"
-            onClick={() => onItemClick(item.id)}
-            style={{
-              cursor: "pointer",
-              textDecoration: item.clicked ? "line-through" : "",
-            }}
+            style={{ textDecoration: item.clicked ? "line-through" : "" }}
+            onClick={() => handleClick(item.id)}
           >
             {item.text}
           </li>
