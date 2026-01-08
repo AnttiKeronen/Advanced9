@@ -1,28 +1,23 @@
-import { useState } from "react";
-import MyList from "./MyList";
-import type { TItem } from "./MyList"; 
-const { v4: uuidv4 } = require("uuid");
-
+// src/components/MyContainer.tsx
+import React, { useState } from "react";
+import MyList, { TItem } from "./MyList";
 
 const MyContainer = () => {
-  const [items, setItems] = useState<TItem[]>([]);
+  // Using simple numeric ids as strings
+  const [items, setItems] = useState<TItem[]>([
+    { id: "1", text: "First item", clicked: false },
+    { id: "2", text: "Second item", clicked: false },
+  ]);
   const [text, setText] = useState("");
 
-  const addItem = () => {
-    if (!text.trim()) return;
-
-    setItems([
-      ...items,
-      {
-        id: uuidv4(), // <-- replaced crypto.randomUUID() with uuidv4()
-        text: text,
-        clicked: false,
-      },
-    ]);
+  const handleAdd = () => {
+    if (!text) return;
+    const newId = (items.length + 1).toString();
+    setItems([...items, { id: newId, text, clicked: false }]);
     setText("");
   };
 
-  const toggleItem = (id: string) => {
+  const handleItemClick = (id: string) => {
     setItems(
       items.map((item) =>
         item.id === id ? { ...item, clicked: !item.clicked } : item
@@ -32,18 +27,12 @@ const MyContainer = () => {
 
   return (
     <div>
+      <MyList header="My List" items={items} onItemClick={handleItemClick} />
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
-      />
-      <br />
-      <button onClick={addItem}>Add</button>
-
-      <MyList
-        header="My List"
-        items={items}
-        onItemClick={toggleItem}
-      />
+      ></textarea>
+      <button onClick={handleAdd}>Add</button>
     </div>
   );
 };

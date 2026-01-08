@@ -1,33 +1,36 @@
+import React from "react";
+
 export type TItem = {
   id: string;
   text: string;
   clicked: boolean;
 };
 
-interface ListProps {
+type ListProps = {
   header: string;
   items: TItem[];
   onItemClick: (id: string) => void;
-}
+};
 
 const MyList = ({ header, items, onItemClick }: ListProps) => {
   return (
     <div>
       <h2>{header}</h2>
-      <ol>
+      <ul>
         {items.map((item) => (
           <li
             key={item.id}
+            role="listitem"
             onClick={() => onItemClick(item.id)}
             style={{
-              textDecoration: item.clicked ? "line-through" : "none",
               cursor: "pointer",
+              textDecoration: item.clicked ? "line-through" : "",
             }}
           >
             {item.text}
           </li>
         ))}
-      </ol>
+      </ul>
     </div>
   );
 };
