@@ -1,8 +1,7 @@
 import { useState } from "react";
 import MyList from "./MyList";
 import type { TItem } from "./MyList"; 
-import { v4 as uuidv4 } from "uuid";
-
+const { v4: uuidv4 } = require("uuid");
 
 
 const MyContainer = () => {

@@ -7,8 +7,16 @@ test("List takes props", () => {
     { id: "5", text: "item number 1", clicked: false },
     { id: "420", text: "item number 2", clicked: true },
   ];
-  let props = { header: "Another header", items: items, updateList: jest.fn() };
+
+  // ✅ Use onItemClick, not updateList
+  let props = { 
+    header: "Another header", 
+    items: items, 
+    onItemClick: jest.fn() 
+  };
+
   let { getByText } = render(<MyList {...props} />);
+  
   expect(getByText(/another header/i)).toBeInTheDocument();
   expect(getByText(/item number 1/i)).toBeInTheDocument();
   expect(getByText(/item number 2/i)).toBeInTheDocument();
